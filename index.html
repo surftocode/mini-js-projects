@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Çizim Uygulaması</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nvbar>
+      <div>
+        <a href="#home" class="">Home</a>
+        <a href="#cizim-uygulamasi">Çizim Uygulaması</a>
+        <a href="#film-uygulamasi">Film Uygulaması</a>
+        <a href="#geri-sayim">Geri Sayım Saati</a>
+        <a href="#github-profil">GitHub profil Uygulaması</a>
+        <a href="#hava-durumu">Hava Durumu Uygulaması</a>
+        <a href="#not-uygulamasi">Not Uygulaması</a>
+        <a href="#sifre-üretme">Şifre Üretme Sayım Saati</a>
+        <a href="#soru-uygulamasi">Soru Uygulaması</a>
+        <a href="#yemek-tarifi">Yemek Tarifi Uygulaması</a>
+      </div>
+    </nvbar>
+
+    <div id="home" class="page">
+      <canvas id="canvas" width="800px" height="800px"></canvas>
+      <div class="toolbox">
+        <button id="decrease">-</button>
+        <span id="size">30</span>
+        <button id="increase">+</button>
+        <input type="color" id="color" />
+        <button id="clear"><i class="fas fa-trash"></i></button>
+      </div>
+    </div>
+    <div id="cizim-uygulamasi" class="page"></div>
+    <div id="film-uygulamasi" class="page">
+      <header>
+        <form id="form">
+          <input type="text" id="search" placeholder="Search" class="search" />
+        </form>
+      </header>
+      <main id="main"></main>
+    </div>
+    <div id="geri-sayim" class="page">
+      <div id="main">
+        <h1>Yeni Yıl</h1>
+
+        <div id="clock"></div>
+        <div id="display">
+          <span>Gün</span>
+          <span>Saat</span>
+          <span>Dakika</span>
+          <span>Saniye </span>
+        </div>
+        <h3>Tasarım codepen.io'dan alınmıştır.</h3>
+      </div>
+    </div>
+    <div id="github-profil" class="page">
+      <form id="form">
+        <label
+          >Kullanıcı Adı :
+          <input
+            type="text"
+            id="search"
+            placeholder="Github Kullanıcı Adınızı Girin!"
+          />
+        </label>
+      </form>
+      <main id="sayfa"></main>
+    </div>
+    <div id="hava-durumu" class="page">
+      <div id="container"></div>
+      <form id="form">
+        <label> Lokasyon Bilgisi : </label>
+        <input
+          type="text"
+          id="search"
+          placeholder="Konum "
+          autocomplete="off"
+        />
+      </form>
+
+      <main id="main"></main>
+    </div>
+    <div id="not-uygulamasi" class="page">
+      <button class="yeniNot" id="yeniNot">
+        <i class="fas fa-plus"></i> Not Ekle
+      </button>
+    </div>
+    <div id="sifre-üretme" class="page">
+      <div class="pw-container">
+        <div class="pw-header">
+          <div class="pw">
+            <span id="pw"></span>
+            <button id="copy">Kopyala</button>
+          </div>
+        </div>
+        <div class="pw-body">
+          <div class="form-control">
+            <label for="len">Şifre Uzunluğu (8-20)</label>
+            <input id="len" type="number" min="8" max="20" value="8" />
+          </div>
+          <div class="form-control">
+            <label for="upper">Büyük Harf içersin</label>
+            <input id="upper" type="checkbox" />
+          </div>
+          <div class="form-control">
+            <label for="lower">küçük harf içersin</label>
+            <input id="lower" type="checkbox" />
+          </div>
+          <div class="form-control">
+            <label for="number">Sayı İçersin</label>
+            <input id="number" type="checkbox" />
+          </div>
+          <div class="form-control">
+            <label for="symbol">Sembol İçersin</label>
+            <input id="symbol" type="checkbox" />
+          </div>
+          <button class="generate" id="generate">Şifre Üret</button>
+        </div>
+      </div>
+    </div>
+    <div id="yemek-tarifi" class="page">
+      <div class="mobile-container">
+        <header>
+          <input type="text" id="search-term" placeholder="Tarif Arayın" />
+          <button id="search"><i class="fas fa-search"></i></button>
+        </header>
+        <div class="fav-container">
+          <h3>Favori Yemekler</h3>
+          <ul class="fav-meals" id="fav-meals"></ul>
+        </div>
+        <div class="meals" id="meals"></div>
+      </div>
+
+      <div class="popup-container hidden" id="meal-popup">
+        <div class="popup">
+          <button id="close-popup" class="close-popup">
+            <i class="fas fa-times"></i>
+          </button>
+          <div class="meal-info" id="meal-info"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
