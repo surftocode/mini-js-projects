@@ -1,8 +1,8 @@
 function router() {
   const pages = document.querySelectorAll(".pages");
   const hash = location.hash || "#home";
-  pages.forEach((p) => {
-    p.style.display = "none";
+  pages.forEach((page) => {
+    page.style.display = "none";
   });
   document.querySelector(hash).style.display = "block";
 }
