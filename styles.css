@@ -1,11 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 
-* {
-    box-sizing: border-box;
-}
+
 
 body {
-    background-color: #f5f5f5;
+    background-color: #dacdcd;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,6 +11,27 @@ body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     min-height: 100vh;
+}
+
+.home-nav{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+
+    
+}
+
+.page{
+    display: none;
+}
+a{
+    text-decoration: dotted;
+    color:rgb(177, 9, 37);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    border:2px dotted rgb(172, 16, 42);
+    padding:20px;
+   
 }
 
 canvas {
@@ -45,11 +64,9 @@ canvas {
 }
 
 
-//FİLM UYGULAMASI C㊙️ @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+//FİLM UYGULAMASI 
+㊙️ @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 
-* {
-    box-sizing: border-box;
-}
 
 body {
     background-color: #22254b;
@@ -425,7 +442,7 @@ input:focus {
     margin: 1rem;
    
 }
-#container {
+#hava-container {
     position: fixed;
     bottom:  10px;
     right: 10px;

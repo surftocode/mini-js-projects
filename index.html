@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Çizim Uygulaması</title>
+    <title>Mini JS prpjects</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -11,22 +11,24 @@
     />
   </head>
   <body>
-    <nvbar>
-      <div>
-        <a href="#home" class="">Home</a>
-        <a href="#cizim-uygulamasi">Çizim Uygulaması</a>
-        <a href="#film-uygulamasi">Film Uygulaması</a>
-        <a href="#geri-sayim">Geri Sayım Saati</a>
-        <a href="#github-profil">GitHub profil Uygulaması</a>
-        <a href="#hava-durumu">Hava Durumu Uygulaması</a>
-        <a href="#not-uygulamasi">Not Uygulaması</a>
-        <a href="#sifre-üretme">Şifre Üretme Sayım Saati</a>
-        <a href="#soru-uygulamasi">Soru Uygulaması</a>
-        <a href="#yemek-tarifi">Yemek Tarifi Uygulaması</a>
-      </div>
-    </nvbar>
-
     <div id="home" class="page">
+      <navbar>
+        <div class="home-nav">
+          <a href="#home" class="home">Home 🏡</a>
+          <a href="#cizim-uygulamasi">Çizim Uygulaması ✏️</a>
+          <a href="#film-uygulamasi">Film Uygulaması 🎬</a>
+          <a href="#geri-sayim">Geri Sayım Saati ⌛</a>
+          <a href="#github-profil">GitHub profil Uygulaması 💁🏻 </a>
+          <a href="#hava-durumu">Hava Durumu Uygulaması 🌤️</a>
+          <a href="#not-uygulamasi">Not Uygulaması 🗒️</a>
+          <a href="#sifre-üretme">Şifre Üretme 🔑</a>
+          <a href="#soru-uygulamasi">Soru Uygulaması ❓</a>
+          <a href="#yemek-tarifi">Yemek Tarifi Uygulaması 🍜</a>
+        </div>
+      </navbar>
+    </div>
+
+    <div id="cizim-uygulamasi" class="page">
       <canvas id="canvas" width="800px" height="800px"></canvas>
       <div class="toolbox">
         <button id="decrease">-</button>
@@ -36,14 +38,12 @@
         <button id="clear"><i class="fas fa-trash"></i></button>
       </div>
     </div>
-    <div id="cizim-uygulamasi" class="page"></div>
     <div id="film-uygulamasi" class="page">
-      <header>
+      <div>
         <form id="form">
           <input type="text" id="search" placeholder="Search" class="search" />
         </form>
-      </header>
-      <main id="main"></main>
+      </div>
     </div>
     <div id="geri-sayim" class="page">
       <div id="main">
@@ -60,7 +60,8 @@
       </div>
     </div>
     <div id="github-profil" class="page">
-      <form id="form">
+        <div>
+            <form id="form">
         <label
           >Kullanıcı Adı :
           <input
@@ -69,11 +70,13 @@
             placeholder="Github Kullanıcı Adınızı Girin!"
           />
         </label>
-      </form>
-      <main id="sayfa"></main>
+      </form> 
+        </div>
+     
+  
     </div>
     <div id="hava-durumu" class="page">
-      <div id="container"></div>
+      <div id="hava-container"></div>
       <form id="form">
         <label> Lokasyon Bilgisi : </label>
         <input
@@ -84,7 +87,7 @@
         />
       </form>
 
-      <main id="main"></main>
+   
     </div>
     <div id="not-uygulamasi" class="page">
       <button class="yeniNot" id="yeniNot">
@@ -126,10 +129,10 @@
     </div>
     <div id="yemek-tarifi" class="page">
       <div class="mobile-container">
-        <header>
+     
           <input type="text" id="search-term" placeholder="Tarif Arayın" />
           <button id="search"><i class="fas fa-search"></i></button>
-        </header>
+       
         <div class="fav-container">
           <h3>Favori Yemekler</h3>
           <ul class="fav-meals" id="fav-meals"></ul>
@@ -147,6 +150,7 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/cizim-uyg.js"></script>
   </body>
 </html>
