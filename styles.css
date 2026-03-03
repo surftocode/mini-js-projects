@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
-
+*{
+    box-sizing: border-box;
+}
 body {
   background-color: #dacdcd;
   display: flex;
@@ -32,43 +34,59 @@ a {
 
 /* cizim uygulamasi */
 
-canvas {
-  border: 2px solid rebeccapurple;
+.cizim-baslık{
+  background-color: #b5b8ec;
+  color:rgb(94, 13, 13);
+  text-transform: capitalize;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+}  canvas {
+  background-color: rgb(216, 222, 228);
+  border: 2px dotted rgb(116, 12, 207);
 }
-.toolbox{  
-    background-color: rgb(47, 14, 231);
-  border: 1px solid rebeccapurple;
-  
+
+canvas:hover{
+  cursor:crosshair;
+}
+.toolbox {
+  background-color: rgb(134, 9, 103);
+  border: 1px solid rgb(27, 15, 39);
+  position: relative;
   display: flex;
   padding: 2rem;
   width: 100%;
- margin: 1em;
-
-
+  margin: 1em;
 }
 
-.toolbox > * {
-
-  
- 
+.toolbox * {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
   padding: 0.25rem;
   margin: 0.25rem;
-  background-color: #3a3535;
-  border: none;
+  background-color: #940b0b;
+  border:1px solid rgb(235, 35, 35);
+  border-radius: 5px;
+ 
   height: 50px;
   width: 50px;
   gap: 10px;
 }
 
-.toolbox > *:last-child {
-  margin-left:20px;
-  width: 100px;
-  height: 100px;
+.toolbox #color {
+  position: absolute;
+ 
+ 
+
 }
+.toolbox > *:last-child {
+  margin-left: auto;
+  background-color: #3c3d2b;
+
+}
+
 
 /* //FİLM UYGULAMASI */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");

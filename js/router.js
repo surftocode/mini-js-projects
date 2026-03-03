@@ -1,5 +1,5 @@
 function router() {
-  const pages = document.querySelectorAll(".pages");
+  const pages = document.querySelectorAll(".page");
   const hash = location.hash || "#home";
   pages.forEach((page) => {
     page.style.display = "none";
@@ -7,5 +7,6 @@ function router() {
   document.querySelector(hash).style.display = "block";
 }
 
-window.addEventListener("hashchange", router);
 window.addEventListener("load", router);
+window.addEventListener("hashchange", router);
+
