@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
 *{
     box-sizing: border-box;
 }
@@ -89,22 +90,24 @@ canvas:hover{
 
 
 /* //FİLM UYGULAMASI */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 
-body {
+
+/* #film-uygulamasi {
   background-color: #22254b;
   font-family: "Poppins", sans-serif;
   margin: 0;
-}
+ 
+} */
 
-header {
+#film-uygulamas {
   background-color: #373b69;
   display: flex;
   justify-content: flex-end;
-  padding: 1rem;
+  padding: 1rem; 
+  position: absolute;
 }
 
-.search {
+#film-uygulamasi #search {
   background-color: transparent;
   border: 2px solid #7378c5;
   border-radius: 50px;
@@ -112,6 +115,7 @@ header {
   font-family: inherit;
   font-size: 1rem;
   padding: 0.5rem 1rem;
+  position:relative ;
 }
 
 .search::placeholder {
@@ -123,7 +127,7 @@ header {
   outline: none;
 }
 
-main {
+.filmArea {
   display: flex;
   flex-wrap: wrap;
 }
@@ -283,7 +287,7 @@ span.flip {
 
 //GİTHUB PROFİL UYGULAMASI
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
 
 * {
   box-sizing: border-box;
@@ -383,7 +387,7 @@ input:focus {
 
 //HAVA DURUMU
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
 
 * {
   box-sizing: border-box;
@@ -457,7 +461,7 @@ input:focus {
 }
 
 //NOT UYGULAMASI
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
 
 * {
   box-sizing: border-box;
@@ -534,7 +538,7 @@ body {
 
 //SİFRE URETME
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
 
 * {
   box-sizing: border-box;
@@ -627,7 +631,7 @@ body {
 
 //SORU UYGULAMASI
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
 
 /* sayfa için modal tasarımı */
 * {
@@ -1063,8 +1067,6 @@ input:nth-of-type(4):checked ~ .worm .worm__segment:before {
 }
 
 //YEMEK TARİFİ UYGULAMASI
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 
 * {
   box-sizing: border-box;
