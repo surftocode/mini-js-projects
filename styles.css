@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
+  margin:0px;
+  padding: 0px;
 }
 body {
   background-color: #dacdcd;
@@ -10,7 +12,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "Poppins", sans-serif;
-  margin: 0;
+ 
   min-height: 100vh;
 }
 
@@ -35,20 +37,20 @@ a {
 
 /* cizim uygulamasi */
 
-.cizim-baslık{
+.cizim-baslık {
   background-color: #b5b8ec;
-  color:rgb(94, 13, 13);
+  color: rgb(94, 13, 13);
   text-transform: capitalize;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-
-}  canvas {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+canvas {
   background-color: rgb(216, 222, 228);
   border: 2px dotted rgb(116, 12, 207);
 }
 
-canvas:hover{
-  cursor:crosshair;
+canvas:hover {
+  cursor: crosshair;
 }
 .toolbox {
   background-color: rgb(134, 9, 103);
@@ -68,9 +70,9 @@ canvas:hover{
   padding: 0.25rem;
   margin: 0.25rem;
   background-color: #940b0b;
-  border:1px solid rgb(235, 35, 35);
+  border: 1px solid rgb(235, 35, 35);
   border-radius: 5px;
- 
+
   height: 50px;
   width: 50px;
   gap: 10px;
@@ -78,19 +80,13 @@ canvas:hover{
 
 .toolbox #color {
   position: absolute;
- 
- 
-
 }
 .toolbox > *:last-child {
   margin-left: auto;
   background-color: #3c3d2b;
-
 }
 
-
 /* //FİLM UYGULAMASI */
-
 
 /* #film-uygulamasi {
   background-color: #22254b;
@@ -103,19 +99,21 @@ canvas:hover{
   background-color: #373b69;
   display: flex;
   justify-content: flex-end;
-  padding: 1rem; 
-  position: absolute;
+  padding: 1rem;
+  position: relative;
 }
 
 #film-uygulamasi #search {
   background-color: transparent;
   border: 2px solid #7378c5;
   border-radius: 50px;
-  color: #fff;
+  color: #270404;
   font-family: inherit;
   font-size: 1rem;
   padding: 0.5rem 1rem;
-  position:relative ;
+  position: absolute;
+  top:10px;
+  right:10px;
 }
 
 .search::placeholder {
@@ -140,6 +138,7 @@ canvas:hover{
   position: relative;
   margin: 1rem;
   width: 300px;
+ 
 }
 
 .movie img {
@@ -148,22 +147,26 @@ canvas:hover{
 
 .movie-info {
   color: #eee;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem 1rem;
   letter-spacing: 0.5px;
+ 
+  
 }
 
 .movie-info h3 {
   margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .movie-info span {
-  background-color: #22254b;
+  background-color: #575eca60;
   border-radius: 3px;
-  font-weight: bold;
-  padding: 0.25rem 0.5rem;
+  font-weight: 100;
+  font-size: 16px;
+ 
 }
 .movie-info span.green {
   color: rgb(39, 189, 39);
@@ -178,24 +181,28 @@ canvas:hover{
 }
 
 .overview {
-  background-color: #fff;
+  background-color: #e02c8ffd;
   padding: 2rem;
   position: absolute;
   max-height: 100%;
   overflow: auto;
   left: 0;
+ 
   bottom: 0;
   right: 0;
-  transform: translateY(101%);
-  transition: transform 0.3s ease-in;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
 }
 
 .overview h3 {
-  margin-top: 0;
+  margin: 5px;
+  color: #2718b1;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 
 .movie:hover .overview {
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 ///GERİ SAYIMUYGULAMASI
@@ -286,8 +293,6 @@ span.flip {
 }
 
 //GİTHUB PROFİL UYGULAMASI
-
-
 
 * {
   box-sizing: border-box;
@@ -387,8 +392,6 @@ input:focus {
 
 //HAVA DURUMU
 
-
-
 * {
   box-sizing: border-box;
 }
@@ -461,7 +464,6 @@ input:focus {
 }
 
 //NOT UYGULAMASI
-
 
 * {
   box-sizing: border-box;
@@ -537,8 +539,6 @@ body {
 }
 
 //SİFRE URETME
-
-
 
 * {
   box-sizing: border-box;
@@ -630,8 +630,6 @@ body {
 }
 
 //SORU UYGULAMASI
-
-
 
 /* sayfa için modal tasarımı */
 * {
