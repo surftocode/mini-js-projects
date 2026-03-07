@@ -4,22 +4,33 @@ const myUrl = `${baseURL}/movie/popular?api_key=${APIkey}&page=1`;
 const imgPath = "https://image.tmdb.org/t/p/original";
 
 const form = document.getElementById("form");
-const search = form.elements.search;
+const search = document.getElementById("search");
 const filmArea = document.querySelector(".filmArea");
 const searchAPI = `${baseURL}/search/movie?query=${search}`;
 
 allMovies(myUrl);
 
-async function allMovies(url) {
-  const response = await fetch(url);
-  const responseData = await response.json();
-  console.log(responseData.results);
-  filmleriGoster(responseData.results);
+async function allMovies(input) {
+  let moviesDisplay = [];
+  if (typeof input === "string") {
+    try {
+      const response = await fetch(input);
+      const responseData = await response.json();
+      moviesDisplay = responseData.results;
+    } catch (error) {
+      console.error("API hatası", error);
+      return;
+    }
+  } else if (Array.isArray(input)) {
+    moviesDisplay = input;
+  }
+
+  filmleriGoster(moviesDisplay);
 }
 
 async function filmleriGoster(film) {
   filmArea.innerHTML = "";
-   film.forEach((item) => {
+  film.forEach((item) => {
     const { title, overview, release_date, vote_average, poster_path } = item;
     const filmElement = document.createElement("div");
     filmElement.classList.add("movie");
@@ -41,10 +52,21 @@ async function filmleriGoster(film) {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const arananFilm = search.value;
-  if (arananFilm) {
-    allMovies(searchAPI + arananFilm);
-    console.log(arananFilm);
-    search.value = "";
-  }
+  
+
+
+
+
+
+//   const arananFilm = search.value.toLowerCase().trim();
+//   console.log(arananFilm)
+ 
+//   if (arananFilm) {
+//     console.log("Enter'a basıldı veya form gönderildi:", arananFilm);
+//     allMovies(searchAPI + arananFilm);
+//     searchInput.value = ""; // Inputu temizle
+// } else {
+//     alert("Lütfen bir film adı girin!");
+// }
+
 });
