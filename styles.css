@@ -141,6 +141,10 @@ canvas:hover {
   width: 300px;
 }
 
+.movie:hover {
+  background-color: rgba(238, 229, 233, 0);
+}
+
 .movie img {
   width: 100%;
 }
@@ -183,7 +187,7 @@ canvas:hover {
   max-height: 100%;
   overflow: auto;
   left: 0;
-
+  color: rgb(255, 255, 254);
   bottom: 0;
   right: 0;
   transform: translateX(100%);

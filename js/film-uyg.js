@@ -4,7 +4,7 @@ const myUrl = `${baseURL}/movie/popular?api_key=${APIkey}&page=1`;
 const imgPath = "https://image.tmdb.org/t/p/original";
 
 const form = document.getElementById("form");
-const search = form.elements.search;
+const search = document.querySelector("#search");
 const filmArea = document.querySelector(".filmArea");
 
 allMovies(myUrl);
@@ -25,7 +25,7 @@ async function filmleriGoster(film) {
   filmArea.innerHTML = "";
   await film.forEach((item) => {
     const { title, overview, vote_average, poster_path } = item;
-    const filmElement = document.createElement("div");
+    const filmElement = document.createElement("button");
     filmElement.classList.add("movie");
     filmElement.innerHTML = `
       <img src="${imgPath}${poster_path}" alt="${title}"/>
@@ -43,24 +43,30 @@ async function filmleriGoster(film) {
   });
 }
 
+const filmButton=document.querySelector(".movie");
+
+filmButton.addEventListener("click",(e)=>{
+
+})
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const arananFilm = search.value.toLowerCase().trim();
-  console.log("aranan film", arananFilm);
-  const filteredMovies = movies.filter((movie) => {
-    return movie.title.toLowerCase().includes(arananFilm);
-  });
+  
+  const searchAPI = `${baseURL}/search/movie?api_key=${APIkey}&query=${encodeURIComponent(
+    arananFilm
+  )}`;
 
+  if (allMovies(searchAPI).length === 0) {
+    alert("aradığınız film bulunamadı!")
+   
+  }
   if (!arananFilm) {
     alert("Film giriniz");
     return;
   }
-  if (filteredMovies > 0) {
-    const searchAPI = `${baseURL}/search/movie?api_key=${APIkey}&query=${arananFilm}`;
+  if (arananFilm && arananFilm !== "") {
+    allMovies(searchAPI);
     search.value = "";
-    allMovies(searchAPI.results);
-    console.log("filtered movies", filteredMovies);
-  } else {
-    alert("Aradığınız film bulunamadı!");
   }
 });
