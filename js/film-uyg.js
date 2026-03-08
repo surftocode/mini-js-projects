@@ -4,34 +4,27 @@ const myUrl = `${baseURL}/movie/popular?api_key=${APIkey}&page=1`;
 const imgPath = "https://image.tmdb.org/t/p/original";
 
 const form = document.getElementById("form");
-const search = document.getElementById("search");
+const search = form.elements.search;
 const filmArea = document.querySelector(".filmArea");
-const searchAPI = `${baseURL}/search/movie?query=${search}`;
 
 allMovies(myUrl);
 
-async function allMovies(input) {
-  let moviesDisplay = [];
-  if (typeof input === "string") {
-    try {
-      const response = await fetch(input);
-      const responseData = await response.json();
-      moviesDisplay = responseData.results;
-    } catch (error) {
-      console.error("API hatası", error);
-      return;
-    }
-  } else if (Array.isArray(input)) {
-    moviesDisplay = input;
+async function allMovies(url) {
+  try {
+    const response = await fetch(url);
+    const responseData = await response.json();
+    const movies = responseData.results;
+    filmleriGoster(movies);
+  } catch (error) {
+    console.error("API hatası", error);
+    return;
   }
-
-  filmleriGoster(moviesDisplay);
 }
 
 async function filmleriGoster(film) {
   filmArea.innerHTML = "";
-  film.forEach((item) => {
-    const { title, overview, release_date, vote_average, poster_path } = item;
+  await film.forEach((item) => {
+    const { title, overview, vote_average, poster_path } = item;
     const filmElement = document.createElement("div");
     filmElement.classList.add("movie");
     filmElement.innerHTML = `
@@ -39,12 +32,12 @@ async function filmleriGoster(film) {
       <div class="movie-info">
       <h3> ${title}
       <span>filmOranı
-      "${vote_average}">${vote_average}"</span>
+      ${vote_average}</span>
       </h3>
       </div>
       <div class="overview">
-      <h3 ">
-      Açıklama:</h3>"${overview}"</div>
+      <h3 >
+      Açıklama:</h3>${overview}</div>
       `;
     filmArea.appendChild(filmElement);
   });
@@ -52,21 +45,22 @@ async function filmleriGoster(film) {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  
+  const arananFilm = search.value.toLowerCase().trim();
+  console.log("aranan film", arananFilm);
+  const filteredMovies = movies.filter((movie) => {
+    return movie.title.toLowerCase().includes(arananFilm);
+  });
 
-
-
-
-
-//   const arananFilm = search.value.toLowerCase().trim();
-//   console.log(arananFilm)
- 
-//   if (arananFilm) {
-//     console.log("Enter'a basıldı veya form gönderildi:", arananFilm);
-//     allMovies(searchAPI + arananFilm);
-//     searchInput.value = ""; // Inputu temizle
-// } else {
-//     alert("Lütfen bir film adı girin!");
-// }
-
+  if (!arananFilm) {
+    alert("Film giriniz");
+    return;
+  }
+  if (filteredMovies > 0) {
+    const searchAPI = `${baseURL}/search/movie?api_key=${APIkey}&query=${arananFilm}`;
+    search.value = "";
+    allMovies(searchAPI.results);
+    console.log("filtered movies", filteredMovies);
+  } else {
+    alert("Aradığınız film bulunamadı!");
+  }
 });
