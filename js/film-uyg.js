@@ -24,7 +24,7 @@ async function allMovies(url) {
 async function filmleriGoster(film) {
   filmArea.innerHTML = "";
   await film.forEach((item) => {
-    const { title, overview, vote_average, poster_path } = item;
+    const { id, title, overview, vote_average, poster_path } = item;
     const filmElement = document.createElement("button");
     filmElement.classList.add("movie");
     filmElement.innerHTML = `
@@ -39,27 +39,23 @@ async function filmleriGoster(film) {
       <h3 >
       Açıklama:</h3>${overview}</div>
       `;
+    filmElement.addEventListener("click", () => {
+      window.location.href = `movie_detail.html?id=${id}`;
+    });
     filmArea.appendChild(filmElement);
   });
 }
 
-const filmButton=document.querySelector(".movie");
-
-filmButton.addEventListener("click",(e)=>{
-
-})
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const arananFilm = search.value.toLowerCase().trim();
-  
+
   const searchAPI = `${baseURL}/search/movie?api_key=${APIkey}&query=${encodeURIComponent(
     arananFilm
   )}`;
 
   if (allMovies(searchAPI).length === 0) {
-    alert("aradığınız film bulunamadı!")
-   
+    alert("aradığınız film bulunamadı!");
   }
   if (!arananFilm) {
     alert("Film giriniz");
